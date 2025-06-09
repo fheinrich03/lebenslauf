@@ -1,10 +1,10 @@
 import React from 'react';
 import { Box, Paper } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { ResumeData } from '../types';
+import { ResumeData, TimelineEntry } from '../types/index';
 import Header from './Header';
 import Sidebar from './Sidebar';
-import MainContent from './MainContent';
+import Timeline from './Timeline';
 
 const OuterWrapper = styled(Box)(({ theme }) => ({
   width: '100%',
@@ -27,7 +27,7 @@ const ResumeGrid = styled(Box)(({ theme }) => ({
 
 const SidebarPaper = styled(Paper)(({ theme }) => ({
   background: '#e3e8ee',
-  padding: theme.spacing(2),
+  padding: theme.spacing(5),
   borderRadius: theme.spacing(1.5),
   boxShadow: '0 2px 8px rgba(0,0,0,0.04)',
   display: 'flex',
@@ -37,7 +37,7 @@ const SidebarPaper = styled(Paper)(({ theme }) => ({
 
 const MainPaper = styled(Paper)(({ theme }) => ({
   background: '#fff',
-  padding: theme.spacing(2.5),
+  padding: theme.spacing(5),
   borderRadius: theme.spacing(1.5),
   boxShadow: '0 2px 8px rgba(0,0,0,0.06)',
 }));
@@ -47,6 +47,9 @@ interface ResumeProps {
 }
 
 const Resume: React.FC<ResumeProps> = ({ data }) => {
+  const educationEntries = data.timeline.filter((entry: TimelineEntry) => entry.type === 'education');
+  const experienceEntries = data.timeline.filter((entry: TimelineEntry) => entry.type === 'experience');
+
   return (
     <OuterWrapper>
       <ResumeGrid>
@@ -54,8 +57,11 @@ const Resume: React.FC<ResumeProps> = ({ data }) => {
           <Sidebar data={data} />
         </SidebarPaper>
         <MainPaper>
-          <Header data={data} />
-          <MainContent data={data} />
+          <Header name={data.name} title={data.title} summary={data.summary} />
+          <Timeline entries={experienceEntries} />
+          <Box sx={{ mt: 6 }}>
+            <Timeline entries={educationEntries} />
+          </Box>
         </MainPaper>
       </ResumeGrid>
     </OuterWrapper>

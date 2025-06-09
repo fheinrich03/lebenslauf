@@ -1,20 +1,24 @@
-export interface Education {
-  degree: string;
-  institution: string;
-  period: string;
-  description?: string;
+export interface DetailItem {
+  label: string;
+  content: string[];
 }
 
-export interface Experience {
-  position: string;
-  company: string;
+export interface TimelineEntry {
+  type: 'education' | 'experience';
+  title: string;
+  institution: string;
   period: string;
-  description: string[];
+  details: DetailItem[];
+}
+
+export interface SkillItem {
+  name: string;
+  level: '1' | '2' | '3';
 }
 
 export interface Skill {
   category: string;
-  items: string[];
+  items: SkillItem[];
 }
 
 export interface Contact {
@@ -30,7 +34,6 @@ export interface ResumeData {
   title: string;
   summary: string;
   contact: Contact;
-  experience: Experience[];
-  education: Education[];
+  timeline: TimelineEntry[];
   skills: Skill[];
 } 
