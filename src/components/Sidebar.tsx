@@ -27,6 +27,13 @@ const Sidebar: React.FC<{ data: ResumeData }> = ({ data }) => {
   const { contact, skills } = data;
   return (
     <Box>
+      <Box sx={{ display: 'flex', justifyContent: 'center', mb: 2 }}>
+        <img
+          src={process.env.PUBLIC_URL + '/placeholder.jpg'}
+          alt="Profilbild"
+          style={{ width: 128, height: 128, borderRadius: '50%', objectFit: 'cover', boxShadow: '0 2px 8px rgba(0,0,0,0.08)', border: '3px solid #87b5db' }}
+        />
+      </Box>
       <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 1 }}>
         Kontakt
       </Typography>
@@ -93,10 +100,14 @@ const Sidebar: React.FC<{ data: ResumeData }> = ({ data }) => {
       <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 1 }}>
         Sprachen
       </Typography>
-      <Stack direction="row" spacing={1} flexWrap="wrap" useFlexGap>
-        <Chip label={<span><span style={{color:skillLevelMap.expert.color, fontSize:'1em', marginRight:2}}>{skillLevelMap.expert.icon}</span> Deutsch</span>} size="small" sx={{ background: '#f4f6fa', color: '#222', border: 'none', fontWeight: 500 }} />
-        <Chip label={<span><span style={{color:skillLevelMap.advanced.color, fontSize:'1em', marginRight:2}}>{skillLevelMap.advanced.icon}</span> Englisch</span>} size="small" sx={{ background: '#f4f6fa', color: '#222', border: 'none', fontWeight: 500 }} />
-      </Stack>
+      <Box sx={{ mb: 2 }}>
+        <Box sx={{ mb: 1 }}>
+          <b>Deutsch:</b> C2 – Muttersprache
+        </Box>
+        <Box>
+          <b>Englisch:</b> C1 – 3 Jahre Arbeit in internationalen Teams
+        </Box>
+      </Box>
       {/* Legende */}
       <Box sx={{ mt: 3, fontSize: '1em', color: '#444', textAlign: 'left' }}>
         <Divider sx={{ my: 1 }} />
@@ -107,7 +118,6 @@ const Sidebar: React.FC<{ data: ResumeData }> = ({ data }) => {
             <ul style={{ margin: 0, marginTop: 2, paddingLeft: 18 }}>
               <li>Mitarbeit an mehreren realen Softwareprojekten (z. B. 3 oder mehr)</li>
               <li>Anwendung in professionellem Umfeld (z. B. Unternehmen, Agentur, Startup)</li>
-              <li>Regelmäßiger, sicherer Einsatz im Team oder eigenständig</li>
             </ul>
           </Box>
         </Box>
@@ -118,7 +128,6 @@ const Sidebar: React.FC<{ data: ResumeData }> = ({ data }) => {
             <ul style={{ margin: 0, marginTop: 2, paddingLeft: 18 }}>
               <li>1–2 kleinere Projekte (z. B. Uni, Nebenprojekte, Hackathons)</li>
               <li>Selbstständige Anwendung mit funktionierenden Ergebnissen</li>
-              <li>Einsatz gelegentlich, aber sicher und zielgerichtet</li>
             </ul>
           </Box>
         </Box>
@@ -129,7 +138,6 @@ const Sidebar: React.FC<{ data: ResumeData }> = ({ data }) => {
             <ul style={{ margin: 0, marginTop: 2, paddingLeft: 18 }}>
               <li>Erste Schritte durch Kurse, Tutorials oder Experimente</li>
               <li>Keine oder nur sehr kleine Projekte umgesetzt</li>
-              <li>Unregelmäßige oder noch unsichere Anwendung, Fokus auf Lernen</li>
             </ul>
           </Box>
         </Box>
