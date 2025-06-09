@@ -8,13 +8,6 @@ const MainContent: React.FC<{ data: ResumeData }> = ({ data }) => {
   return (
     <Box>
       <Typography variant="h6" sx={{ color: '#2196f3', fontWeight: 'bold', mb: 1 }}>
-        Profil
-      </Typography>
-      <Typography variant="body1" color="text.secondary" paragraph sx={{ mb: 3 }}>
-        {data.summary}
-      </Typography>
-      <Divider sx={{ mb: 3 }} />
-      <Typography variant="h6" sx={{ color: '#2196f3', fontWeight: 'bold', mb: 1 }}>
         Berufserfahrung
       </Typography>
       <Experience experiences={data.experience} />
@@ -23,7 +16,6 @@ const MainContent: React.FC<{ data: ResumeData }> = ({ data }) => {
         Ausbildung
       </Typography>
       <Education education={data.education} />
-      {/* Optional: Projekte, Auszeichnungen etc. */}
     </Box>
   );
 };

@@ -98,16 +98,40 @@ const Sidebar: React.FC<{ data: ResumeData }> = ({ data }) => {
         <Chip label={<span><span style={{color:skillLevelMap.advanced.color, fontSize:'1em', marginRight:2}}>{skillLevelMap.advanced.icon}</span> Englisch</span>} size="small" sx={{ background: '#f4f6fa', color: '#222', border: 'none', fontWeight: 500 }} />
       </Stack>
       {/* Legende */}
-      <Box sx={{ mt: 3, fontSize: '0.75em', color: '#888', textAlign: 'left' }}>
+      <Box sx={{ mt: 3, fontSize: '1em', color: '#444', textAlign: 'left' }}>
         <Divider sx={{ my: 1 }} />
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 0.5 }}>
-          <span style={{color:skillLevelMap.expert.color, fontSize:'1em'}}>{skillLevelMap.expert.icon}</span> <span>Experte</span>
+        <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 1, mb: 2 }}>
+          <span style={{color:skillLevelMap.expert.color, fontSize:'1em', marginTop: 4}}>{skillLevelMap.expert.icon}</span>
+          <Box>
+            <b>Professionelle Anwendung</b>
+            <ul style={{ margin: 0, marginTop: 2, paddingLeft: 18 }}>
+              <li>Mitarbeit an mehreren realen Softwareprojekten (z. B. 3 oder mehr)</li>
+              <li>Anwendung in professionellem Umfeld (z. B. Unternehmen, Agentur, Startup)</li>
+              <li>Regelmäßiger, sicherer Einsatz im Team oder eigenständig</li>
+            </ul>
+          </Box>
         </Box>
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 0.5 }}>
-          <span style={{color:skillLevelMap.advanced.color, fontSize:'1em'}}>{skillLevelMap.advanced.icon}</span> <span>Fortgeschritten</span>
+        <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 1, mb: 2 }}>
+          <span style={{color:skillLevelMap.advanced.color, fontSize:'1em', marginTop: 4}}>{skillLevelMap.advanced.icon}</span>
+          <Box>
+            <b>Praktische Erfahrung</b>
+            <ul style={{ margin: 0, marginTop: 2, paddingLeft: 18 }}>
+              <li>1–2 kleinere Projekte (z. B. Uni, Nebenprojekte, Hackathons)</li>
+              <li>Selbstständige Anwendung mit funktionierenden Ergebnissen</li>
+              <li>Einsatz gelegentlich, aber sicher und zielgerichtet</li>
+            </ul>
+          </Box>
         </Box>
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-          <span style={{color:skillLevelMap.basic.color, fontSize:'1em'}}>{skillLevelMap.basic.icon}</span> <span>Grundkenntnisse</span>
+        <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 1, mb: 0 }}>
+          <span style={{color:skillLevelMap.basic.color, fontSize:'1em', marginTop: 4}}>{skillLevelMap.basic.icon}</span>
+          <Box>
+            <b>Grundkenntnisse</b>
+            <ul style={{ margin: 0, marginTop: 2, paddingLeft: 18 }}>
+              <li>Erste Schritte durch Kurse, Tutorials oder Experimente</li>
+              <li>Keine oder nur sehr kleine Projekte umgesetzt</li>
+              <li>Unregelmäßige oder noch unsichere Anwendung, Fokus auf Lernen</li>
+            </ul>
+          </Box>
         </Box>
       </Box>
     </Box>
