@@ -2,14 +2,29 @@ import { ResumeData } from "./types/index";
 
 export const resumeData: ResumeData = {
   name: "Felix Heinrich",
-  title: "Student - Softwareentwickler",
-  summary: "Motivierter Student der Angewandten Informatik mit praktischer Erfahrung in der Softwareentwicklung. Spezialisiert auf Full-Stack Entwicklung mit Fokus auf moderne Webtechnologien und agile Entwicklungsmethoden.",
+  title: "Student & Fullstack Softwareentwickler",
+  summary: "Werkstudent im Bereich Softwareentwicklung mit praktischer Erfahrung in modernen Webtechnologien und Cloud-Lösungen. Schwerpunkt auf der Full-Stack-Entwicklung, ergänzt durch Kenntnisse in Mobile Development, AWS-Services und agilen Methoden. Zielstrebiger Informatikstudent mit Expertise in der Umsetzung moderner Softwarelösungen.",
   contact: {
-    email: "heinrichfelix03@gmail.com",
-    phone: "+49 1729723090",
-    location: "Bernau bei Berlin, Deutschland",
-    linkedin: "felix-heinrich-b2b66b26b",
-    github: "fheinrich03",
+    email: {
+      label: "heinrichfelix03@gmail.com",
+      link: "mailto:heinrichfelix03@gmail.com"
+    },
+    phone: {
+      label: "+49 1729723090",
+      link: "tel:+491729723090"
+    },
+    location: {
+      label: "Bernau bei Berlin, Deutschland",
+      link: "https://www.google.com/maps/place/Bernau+bei+Berlin"
+    },
+    linkedin: {
+      label: "felix-heinrich-b2b66b26b",
+      link: "https://www.linkedin.com/in/felix-heinrich-b2b66b26b/"
+    },
+    github: {
+      label: "fheinrich03",
+      link: "https://github.com/fheinrich03"
+    }
   },
   languages: [
     {
@@ -18,24 +33,24 @@ export const resumeData: ResumeData = {
     },
     {
       name: "Englisch",
-      level: "C2 – fließend, 2,5 Jahre Praxiserfahrung im Arbeitsumfeld"
+      level: "C1 – fließend"
     }
   ],
   skillLevels: [
     {
       level: "1",
       label: "Professionell",
-      description: "Erfahrung aus mehreren realen Softwareprojekten (in Studium und Beruf). Selbstständige Planung und Umsetzung mit nachweisbaren, funktionierenden Ergebnissen."
+      description: "Eigenständige Feature-Entwicklung"
     },
     {
       level: "2",
       label: "Praktische Erfahrung",
-      description: "Eigenständige Bearbeitung kleinerer Aufgaben oder Projekte (in Studium oder Beruf). Sicherer Umgang und regelmäßige Anwendung."
+      description: "Tiefgreifende Kenntnisse"
     },
     {
       level: "3",
       label: "Grundkenntnisse",
-      description: "Grundlegende Kenntnisse durch Kurse oder kleinere Projekte. Unregelmäßige Anwendung."
+      description: "Unregelmäßige Anwendung",
     }
   ],
   timeline: [
@@ -64,6 +79,12 @@ export const resumeData: ResumeData = {
           label: "Arbeitsweise",
           content: ["Projektplanung und agiles Arbeiten im Team"],
         },
+        {
+          label: "Erfahrungen",
+          content: [
+            "Angular, Spring Boot, Python, Kotlin, Android Studio",
+          ],
+        },
       ],
     },
     {
@@ -77,16 +98,23 @@ export const resumeData: ResumeData = {
           content: [
             "Frontend- und Backend-Entwicklung in mehreren Projekten",
             "Arbeit im Scrum-Team mit regelmäßigen Sprints",
-            "Eigenständige Entwicklung von Features von der Implementierung bis zum Release",
+            "Eigenständige Verwirklichung von Features",
+            "Selbstständig von Implementierung bis Release",
           ],
         },
         {
           label: "Arbeitsweise",
           content: [
-            "Implementierung neuer Features",
+            "Implementierung",
             "Testen und Qualitätssicherung",
             "UAT (User Acceptance Testing)",
             "Release-Management",
+          ],
+        },
+        {
+          label: "Erfahrungen",
+          content: [
+            "React, Java, Amazon EC2, S3, IAM, PostgresQL, MySQL",
           ],
         },
       ],
@@ -118,7 +146,7 @@ export const resumeData: ResumeData = {
           label: "Relevante Module",
           content: [
             "Projekt 1",
-            "Programmierung 1 & 2",
+            "Programmierung 1 & 2 (Java, C)",
             "Technische Informatik",
             "Informations- und Codierungstheorie",
           ],
@@ -135,17 +163,17 @@ export const resumeData: ResumeData = {
         {
           label: "Relevante Module",
           content: [
-            "Software Engineering",
-            "Programmierung",
+            "Software Engineering (Python)",
+            "Programmierung (Java)",
             "Datenbanken",
-            "Web Application Development",
-            "Algorithmen und Datenstrukturen",
+            "Web Application Development (HTML, CSS, JavaScript)",
+            "Algorithmen und Datenstrukturen (Go)",
           ],
         },
       ],
     },
   ],
-  devSkills: [
+  hardSkills: [
     {
       category: "Programmiersprachen",
       items: [
@@ -166,6 +194,8 @@ export const resumeData: ResumeData = {
         { name: "Tailwind CSS", level: "2" },
         { name: "Next.js", level: "2" },
         { name: "Spring Framework", level: "2" },
+        { name: "AWS Amplify", level: "3" },
+        { name: "Angular", level: "3" },
       ],
     },
     {
@@ -173,6 +203,17 @@ export const resumeData: ResumeData = {
       items: [
         { name: "Docker", level: "2" },
         { name: "CI/CD", level: "2" },
+        { name: "Amazon EC2", level: "3" },
+        { name: "Amazon S3", level: "3" },
+        { name: "Amazon IAM", level: "3" },
+        { name: "Amazon Systems Manager", level: "3" },
+      ],
+    },
+    {
+      category: "Datenbanken",
+      items: [
+        { name: "PostgresQL", level: "2" },
+        { name: "MySQL", level: "3" },
       ],
     },
     {

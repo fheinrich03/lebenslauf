@@ -1,15 +1,15 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
 import { TimelineEntry, DetailItem } from "../types/index";
-import telekomLogo from "../assets/telekom.svg";
-// @ts-ignore
-import immoscoutLogo from "../assets/immoscout24.svg";
+import telekomLogo from "../assets/telekom.png";
+import immoscoutLogo from "../assets/immoscout24.png";
 
 interface TimelineProps {
   entries: TimelineEntry[];
 }
 
 const Timeline: React.FC<TimelineProps> = ({ entries }) => {
+  const reversedEntries = [...entries].reverse();
   const getCompanyLogo = (institution: string): string | undefined => {
     switch (institution.toLowerCase()) {
       case "deutsche telekom ag":
@@ -34,9 +34,9 @@ const Timeline: React.FC<TimelineProps> = ({ entries }) => {
           fontSize: "1.1rem",
         }}
       >
-        {entries[0]?.type === "education" ? "Bildungsweg" : "Berufserfahrung"}
+        {reversedEntries[0]?.type === "education" ? "Bildungsweg" : "Berufserfahrung"}
       </Typography>
-      {entries.map((entry, index) => (
+      {reversedEntries.map((entry, index) => (
         <Box key={index} sx={{ mb: 2 }}>
           <Box
             sx={{
@@ -106,7 +106,7 @@ const Timeline: React.FC<TimelineProps> = ({ entries }) => {
                   }}
                 >
                   {detail.content.map((item, itemIdx) => (
-                    <Box key={itemIdx} sx={{ mb: itemIdx === 0 ? 0 : 0.5 }}>
+                    <Box key={itemIdx} sx={{ mb: 0.5}}>
                       {item}
                     </Box>
                   ))}

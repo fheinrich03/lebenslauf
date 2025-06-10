@@ -21,12 +21,17 @@ export interface Skill {
   items: SkillItem[];
 }
 
+export interface ContactItem {
+  label: string;
+  link: string;
+}
+
 export interface Contact {
-  email: string;
-  phone: string;
-  location: string;
-  linkedin?: string;
-  github?: string;
+  email: ContactItem;
+  phone: ContactItem;
+  location: ContactItem;
+  linkedin: ContactItem;
+  github: ContactItem;
 }
 
 export interface Language {
@@ -40,6 +45,10 @@ export interface SkillLevel {
   description: string;
 }
 
+export interface SoftSkill {
+  name: string;
+}
+
 export interface ResumeData {
   name: string;
   title: string;
@@ -48,5 +57,5 @@ export interface ResumeData {
   languages: Language[];
   skillLevels: SkillLevel[];
   timeline: TimelineEntry[];
-  devSkills: Skill[];
+  hardSkills: Skill[];
 } 

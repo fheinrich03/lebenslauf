@@ -5,7 +5,6 @@ import { ResumeData, TimelineEntry } from '../types/index';
 import Header from './Header';
 import Sidebar from './Sidebar';
 import Timeline from './Timeline';
-import Languages from './Languages';
 
 const OuterWrapper = styled(Box)(({ theme }) => ({
   width: '100%',
@@ -62,7 +61,6 @@ const Resume: React.FC<ResumeProps> = ({ data }) => {
         </SidebarPaper>
         <MainPaper>
           <Header name={data.name} title={data.title} summary={data.summary} />
-          <Languages languages={data.languages} />
           <Timeline entries={experienceEntries} />
           <Timeline entries={educationEntries} />
         </MainPaper>

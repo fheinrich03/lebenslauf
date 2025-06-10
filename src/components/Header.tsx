@@ -26,7 +26,7 @@ const Header: React.FC<HeaderProps> = ({ name, title, summary }) => {
         variant="h5"
         sx={{
           color: '#2196f3',
-          mb: 2,
+          mb: 1,
           fontSize: '1.25rem',
           fontWeight: 500,
           letterSpacing: 0.5,
@@ -39,7 +39,7 @@ const Header: React.FC<HeaderProps> = ({ name, title, summary }) => {
           color: 'rgba(0, 0, 0, 0.6)',
           fontSize: '1rem',
           lineHeight: 1.6,
-          mb: 2,
+          mt: 2,
         }}
       >
         {summary}

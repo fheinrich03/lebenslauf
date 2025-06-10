@@ -15,7 +15,7 @@ const skillLevelMap: Record<
 > = {
   "1": { label: "Professionell", color: "#1976d2", icon: "⬤", order: 1 }, // blue
   "2": { label: "Praktische Erfahrung", color: "#90caf9", icon: "⬤", order: 2 }, // light blue
-  "3": { label: "Grundkenntnisse", color: "#b0b8c1", icon: "⬤", order: 3 }, // grey
+  "3": { label: "Grundkenntnisse", color: "#ccdaeb", icon: "⬤", order: 3 }, // grey
 };
 
 const getSkillLevel = (skill: SkillItem) => {
@@ -23,7 +23,7 @@ const getSkillLevel = (skill: SkillItem) => {
 };
 
 const Sidebar: React.FC<{ data: ResumeData }> = ({ data }) => {
-  const { devSkills, contact } = data;
+  const { hardSkills, contact } = data;
   return (
     <Box>
       <Box sx={{ display: "flex", justifyContent: "center", mb: 3 }}>
@@ -31,8 +31,8 @@ const Sidebar: React.FC<{ data: ResumeData }> = ({ data }) => {
           src={process.env.PUBLIC_URL + "/profile_pic.jpeg"}
           alt="Profilbild"
           style={{
-            width: 200,
-            height: 200,
+            width: 180,
+            height: 180,
             borderRadius: "50%",
             objectFit: "cover",
             boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
@@ -46,35 +46,76 @@ const Sidebar: React.FC<{ data: ResumeData }> = ({ data }) => {
       <Stack spacing={1} mb={3}>
         <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
           <Email fontSize="small" />
-          <Typography variant="body2">{contact.email}</Typography>
+          <Typography
+            variant="body2"
+            component="a"
+            href={contact.email.link}
+            sx={{ color: "inherit", textDecoration: "underline" }}
+          >
+            {contact.email.label}
+          </Typography>
         </Box>
         <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
           <Phone fontSize="small" />
-          <Typography variant="body2">{contact.phone}</Typography>
+          <Typography
+            variant="body2"
+            component="a"
+            href={contact.phone.link}
+            sx={{ color: "inherit", textDecoration: "underline" }}
+          >
+            {contact.phone.label}
+          </Typography>
         </Box>
         <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
           <LocationOn fontSize="small" />
-          <Typography variant="body2">{contact.location}</Typography>
+          <Typography
+            variant="body2"
+            component="a"
+            href={contact.location.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            sx={{ color: "inherit", textDecoration: "underline" }}
+          >
+            {contact.location.label}
+          </Typography>
         </Box>
         {contact.linkedin && (
           <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
             <LinkedIn fontSize="small" />
-            <Typography variant="body2">{contact.linkedin}</Typography>
+            <Typography
+              variant="body2"
+              component="a"
+              href={contact.linkedin.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{ color: "inherit", textDecoration: "underline" }}
+            >
+              {contact.linkedin.label}
+            </Typography>
           </Box>
         )}
         {contact.github && (
           <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
             <GitHub fontSize="small" />
-            <Typography variant="body2">{contact.github}</Typography>
+            <Typography
+              variant="body2"
+              component="a"
+              href={contact.github.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{ color: "inherit", textDecoration: "underline" }}
+            >
+              {contact.github.label}
+            </Typography>
           </Box>
         )}
       </Stack>
       <Divider sx={{ my: 2 }} />
       <Typography variant="h6" sx={{ fontWeight: "bold", mb: 1.5 }}>
-        Dev Skills
+        Hard Skills
       </Typography>
       <Stack spacing={1} mb={3}>
-        {devSkills.map((group: Skill, i: number) => {
+        {hardSkills.map((group: Skill, i: number) => {
           // Sort skills by level ascending (1 = highest)
           const sortedItems = [...group.items].sort((a, b) => {
             return skillLevelMap[a.level].order - skillLevelMap[b.level].order;
@@ -97,6 +138,7 @@ const Sidebar: React.FC<{ data: ResumeData }> = ({ data }) => {
                               color: level.color,
                               fontSize: "1em",
                               marginRight: 2,
+                              verticalAlign: "middle",
                             }}
                           >
                             {level.icon}
@@ -122,64 +164,46 @@ const Sidebar: React.FC<{ data: ResumeData }> = ({ data }) => {
         })}
       </Stack>
       <Divider sx={{ my: 2 }} />
+      <Typography variant="h6" sx={{ fontWeight: "bold", mb: 1.5 }}>
+        Sprachen
+      </Typography>
+      <Box sx={{ mb: 3 }}>
+        {data.languages.map((language, idx) => (
+          <Box key={idx} sx={{ display: "grid", gridTemplateColumns: "80px 1fr", mb: 1 }}>
+            <Box sx={{ fontWeight: "bold" }}>{language.name}</Box>
+            <Box>{language.level}</Box>
+          </Box>
+        ))}
+      </Box>
+      <Divider sx={{ my: 2 }} />
       <Box sx={{ fontSize: "1em", color: "#444", textAlign: "left" }}>
-        <Box sx={{ display: "flex", alignItems: "flex-start", gap: 1, mb: 2 }}>
-          <span
-            style={{
-              color: skillLevelMap["1"].color,
-              fontSize: "1em",
-              marginTop: 4,
+        {data.skillLevels.map((level, index) => (
+          <Box
+            key={index}
+            sx={{
+              display: "flex",
+              alignItems: "flex-start",
+              gap: 1,
+              mb: index === data.skillLevels.length - 1 ? 0 : 2,
             }}
           >
-            {skillLevelMap["1"].icon}
-          </span>
-          <Box>
-            <b>Professionell</b>
-            <Box sx={{ mt: 1, pl: 0 }}>
-              Erfahrung aus mehreren realen Softwareprojekten
-              <br />
-              Selbstständige Entwicklung mit funktionierenden Ergebnissen
+            <span
+              style={{
+                color: skillLevelMap[level.level].color,
+                fontSize: "1em",
+                marginTop: 4,
+              }}
+            >
+              {skillLevelMap[level.level].icon}
+            </span>
+            <Box>
+              <b>{level.label}</b>
+              <Box sx={{ mt: 0.5, pl: 0, fontSize: "0.9rem" }}>
+                {level.description}
+              </Box>
             </Box>
           </Box>
-        </Box>
-        <Box sx={{ display: "flex", alignItems: "flex-start", gap: 1, mb: 2 }}>
-          <span
-            style={{
-              color: skillLevelMap["2"].color,
-              fontSize: "1em",
-              marginTop: 4,
-            }}
-          >
-            {skillLevelMap["2"].icon}
-          </span>
-          <Box>
-            <b>Praktische Erfahrung</b>
-            <Box sx={{ mt: 1, pl: 0 }}>
-              Eigenständige Bearbeitung kleinerer Aufgaben oder Projekte
-              <br />
-              Sicherer Umgang und regelmäßige Anwendung
-            </Box>
-          </Box>
-        </Box>
-        <Box sx={{ display: "flex", alignItems: "flex-start", gap: 1, mb: 0 }}>
-          <span
-            style={{
-              color: skillLevelMap["3"].color,
-              fontSize: "1em",
-              marginTop: 4,
-            }}
-          >
-            {skillLevelMap["3"].icon}
-          </span>
-          <Box>
-            <b>Grundkenntnisse</b>
-            <Box sx={{ mt: 1, pl: 0 }}>
-              Grundlegende Kenntnisse durch Kurse oder kleinere Projekte
-              <br />
-              Unregelmäßige Anwendung
-            </Box>
-          </Box>
-        </Box>
+        ))}
       </Box>
     </Box>
   );
