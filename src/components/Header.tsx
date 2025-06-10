@@ -7,27 +7,41 @@ interface HeaderProps {
   summary: string;
 }
 
-const codeColor = '#1976d2';
-
 const Header: React.FC<HeaderProps> = ({ name, title, summary }) => {
   return (
-    <Box sx={{ mb: 4 }}>
-      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-        <Typography
-          variant="h3"
-          gutterBottom
-          sx={{ fontWeight: 'bold', fontFamily: 'monospace', letterSpacing: 1 }}
-        >
-          {name}
-        </Typography>
-      </Box>
-      <Typography variant="h5" color="primary" gutterBottom sx={{ fontFamily: 'monospace', letterSpacing: 1 }}>
+    <Box>
+      <Typography
+        variant="h4"
+        sx={{
+          fontWeight: 800,
+          color: 'rgba(0, 0, 0, 0.87)',
+          mb: 1,
+          fontSize: '2.25rem',
+          letterSpacing: 0.5,
+        }}
+      >
+        {name}
+      </Typography>
+      <Typography
+        variant="h5"
+        sx={{
+          color: '#2196f3',
+          mb: 2,
+          fontSize: '1.25rem',
+          fontWeight: 500,
+          letterSpacing: 0.5,
+        }}
+      >
         {title}
       </Typography>
-      <Typography variant="subtitle1" sx={{ color: 'text.secondary', mb: 2, fontSize: '1.1rem', fontWeight: 500 }}>
-        Fokus: Fullstack, AWS Cloud, Mobile Development, Testing
-      </Typography>
-      <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.6, fontSize: '0.95rem' }}>
+      <Typography
+        sx={{
+          color: 'rgba(0, 0, 0, 0.6)',
+          fontSize: '1rem',
+          lineHeight: 1.6,
+          mb: 2,
+        }}
+      >
         {summary}
       </Typography>
     </Box>

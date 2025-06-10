@@ -1,8 +1,6 @@
-import React, { useRef } from 'react';
 import { Button, Container, CssBaseline, ThemeProvider, createTheme } from '@mui/material';
 import { usePDF } from 'react-to-pdf';
 import Resume from './components/Resume';
-import { ResumeData } from './types/index';
 import { resumeData } from './content';
 
 const theme = createTheme({

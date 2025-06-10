@@ -3,7 +3,7 @@ import { ResumeData } from "./types/index";
 export const resumeData: ResumeData = {
   name: "Felix Heinrich",
   title: "Student - Softwareentwickler",
-  summary: "",
+  summary: "Motivierter Student der Angewandten Informatik mit praktischer Erfahrung in der Softwareentwicklung. Spezialisiert auf Full-Stack Entwicklung mit Fokus auf moderne Webtechnologien und agile Entwicklungsmethoden.",
   contact: {
     email: "heinrichfelix03@gmail.com",
     phone: "+49 1729723090",
@@ -11,6 +11,33 @@ export const resumeData: ResumeData = {
     linkedin: "felix-heinrich-b2b66b26b",
     github: "fheinrich03",
   },
+  languages: [
+    {
+      name: "Deutsch",
+      level: "Muttersprache"
+    },
+    {
+      name: "Englisch",
+      level: "C2 – fließend, 2,5 Jahre Praxiserfahrung im Arbeitsumfeld"
+    }
+  ],
+  skillLevels: [
+    {
+      level: "1",
+      label: "Professionell",
+      description: "Erfahrung aus mehreren realen Softwareprojekten (in Studium und Beruf). Selbstständige Planung und Umsetzung mit nachweisbaren, funktionierenden Ergebnissen."
+    },
+    {
+      level: "2",
+      label: "Praktische Erfahrung",
+      description: "Eigenständige Bearbeitung kleinerer Aufgaben oder Projekte (in Studium oder Beruf). Sicherer Umgang und regelmäßige Anwendung."
+    },
+    {
+      level: "3",
+      label: "Grundkenntnisse",
+      description: "Grundlegende Kenntnisse durch Kurse oder kleinere Projekte. Unregelmäßige Anwendung."
+    }
+  ],
   timeline: [
     {
       type: "experience",
@@ -88,10 +115,6 @@ export const resumeData: ResumeData = {
       period: "Oktober 2021 – September 2023",
       details: [
         {
-          label: "Leistungskurse",
-          content: ["Mathematik und Informatik"],
-        },
-        {
           label: "Relevante Module",
           content: [
             "Projekt 1",
@@ -122,7 +145,7 @@ export const resumeData: ResumeData = {
       ],
     },
   ],
-  skills: [
+  devSkills: [
     {
       category: "Programmiersprachen",
       items: [

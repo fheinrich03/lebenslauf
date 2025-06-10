@@ -23,7 +23,7 @@ const getSkillLevel = (skill: SkillItem) => {
 };
 
 const Sidebar: React.FC<{ data: ResumeData }> = ({ data }) => {
-  const { skills, contact } = data;
+  const { devSkills, contact } = data;
   return (
     <Box>
       <Box sx={{ display: "flex", justifyContent: "center", mb: 3 }}>
@@ -71,10 +71,10 @@ const Sidebar: React.FC<{ data: ResumeData }> = ({ data }) => {
       </Stack>
       <Divider sx={{ my: 2 }} />
       <Typography variant="h6" sx={{ fontWeight: "bold", mb: 1.5 }}>
-        Skills
+        Dev Skills
       </Typography>
       <Stack spacing={1} mb={3}>
-        {skills.map((group: Skill, i: number) => {
+        {devSkills.map((group: Skill, i: number) => {
           // Sort skills by level ascending (1 = highest)
           const sortedItems = [...group.items].sort((a, b) => {
             return skillLevelMap[a.level].order - skillLevelMap[b.level].order;
@@ -121,20 +121,6 @@ const Sidebar: React.FC<{ data: ResumeData }> = ({ data }) => {
           );
         })}
       </Stack>
-      <Divider sx={{ my: 2 }} />
-      <Typography variant="h6" sx={{ fontWeight: "bold", mb: 1.5 }}>
-        Sprachen
-      </Typography>
-      <Box sx={{ mb: 3 }}>
-        <Box sx={{ display: "grid", gridTemplateColumns: "80px 1fr", mb: 1 }}>
-          <Box sx={{ fontWeight: "bold" }}>Deutsch</Box>
-          <Box>Muttersprache</Box>
-        </Box>
-        <Box sx={{ display: "grid", gridTemplateColumns: "80px 1fr" }}>
-          <Box sx={{ fontWeight: "bold" }}>Englisch</Box>
-          <Box>C2 – fließend, 2,5 Jahre Praxiserfahrung im Arbeitsumfeld</Box>
-        </Box>
-      </Box>
       <Divider sx={{ my: 2 }} />
       <Box sx={{ fontSize: "1em", color: "#444", textAlign: "left" }}>
         <Box sx={{ display: "flex", alignItems: "flex-start", gap: 1, mb: 2 }}>

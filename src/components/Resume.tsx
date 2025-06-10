@@ -5,16 +5,17 @@ import { ResumeData, TimelineEntry } from '../types/index';
 import Header from './Header';
 import Sidebar from './Sidebar';
 import Timeline from './Timeline';
+import Languages from './Languages';
 
 const OuterWrapper = styled(Box)(({ theme }) => ({
   width: '100%',
-  maxWidth: '1200px', // Increased from 210mm (~794px) to 1200px
-  aspectRatio: '210/297', // A4 aspect ratio
+  maxWidth: '1150px',
+  aspectRatio: '210/297',
   background: '#f7f9fa',
   padding: theme.spacing(2),
   display: 'flex',
   justifyContent: 'center',
-  fontSize: '0.9rem', // Reduce base font size
+  fontSize: '0.9rem',
 }));
 
 const ResumeGrid = styled(Box)(({ theme }) => ({
@@ -40,6 +41,9 @@ const MainPaper = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(5),
   borderRadius: theme.spacing(1.5),
   boxShadow: '0 2px 8px rgba(0,0,0,0.06)',
+  display: 'flex',
+  flexDirection: 'column',
+  gap: theme.spacing(4),
 }));
 
 interface ResumeProps {
@@ -58,10 +62,9 @@ const Resume: React.FC<ResumeProps> = ({ data }) => {
         </SidebarPaper>
         <MainPaper>
           <Header name={data.name} title={data.title} summary={data.summary} />
+          <Languages languages={data.languages} />
           <Timeline entries={experienceEntries} />
-          <Box sx={{ mt: 6 }}>
-            <Timeline entries={educationEntries} />
-          </Box>
+          <Timeline entries={educationEntries} />
         </MainPaper>
       </ResumeGrid>
     </OuterWrapper>

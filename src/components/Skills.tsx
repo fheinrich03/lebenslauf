@@ -20,7 +20,7 @@ const Skills: React.FC<SkillsProps> = ({ skills }) => {
   return (
     <Box>
       <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 2 }}>
-        Skills
+        Dev Skills
       </Typography>
       <Stack spacing={2}>
         {skills.map((skillGroup: Skill, index: number) => (

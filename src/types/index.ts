@@ -29,11 +29,24 @@ export interface Contact {
   github?: string;
 }
 
+export interface Language {
+  name: string;
+  level: string;
+}
+
+export interface SkillLevel {
+  level: '1' | '2' | '3';
+  label: string;
+  description: string;
+}
+
 export interface ResumeData {
   name: string;
   title: string;
   summary: string;
   contact: Contact;
+  languages: Language[];
+  skillLevels: SkillLevel[];
   timeline: TimelineEntry[];
-  skills: Skill[];
+  devSkills: Skill[];
 } 
