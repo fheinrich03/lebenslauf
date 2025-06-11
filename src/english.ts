@@ -1,9 +1,9 @@
 import { ResumeData } from "./types/index";
 
-export const resumeData: ResumeData = {
+export const englishData: ResumeData = {
   name: "Felix Heinrich",
-  title: "Student & Fullstack Softwareentwickler",
-  summary: "Motivierter Informatikstudent (Abschluss Sommer 2025) mit über 2 Jahren praktischer Erfahrung als Fullstack-Entwickler bei ImmoScout24 und der Deutschen Telekom. Spezialisiert auf moderne Webtechnologien (React, TypeScript, Java) und Cloud-Lösungen (AWS, Docker, CI/CD).",
+  title: "Student & Full Stack Software Developer",
+  summary: "Motivated Computer Science student (graduation summer 2025) with over 2 years of practical experience as a Full Stack Developer at ImmoScout24 and Deutsche Telekom. Specialized in modern web technologies (React, TypeScript, Java) and cloud solutions (AWS, Docker, CI/CD).",
   contact: {
     email: {
       label: "heinrichfelix03@gmail.com"
@@ -12,7 +12,7 @@ export const resumeData: ResumeData = {
       label: "+49 1729723090"
     },
     location: {
-      label: "Bernau bei Berlin, Deutschland"
+      label: "Bernau by Berlin, Germany"
     },
     linkedin: {
       label: "felix-heinrich-b2b66b26b"
@@ -23,59 +23,59 @@ export const resumeData: ResumeData = {
   },
   languages: [
     {
-      name: "Deutsch",
-      level: "Muttersprache"
+      name: "German",
+      level: "Native"
     },
     {
-      name: "Englisch",
-      level: "C1 – fließend"
+      name: "English",
+      level: "C1 – Fluent"
     }
   ],
   skillLevels: [
     {
       level: "1",
-      label: "Professionell",
-      description: "Etablierte Projekterfahrung"
+      label: "Professional",
+      description: "Established project experience"
     },
     {
       level: "2",
-      label: "Praktische Erfahrung",
-      description: "Tiefgreifende Kenntnisse"
+      label: "Practical Experience",
+      description: "In-depth knowledge"
     },
     {
       level: "3",
-      label: "Grundkenntnisse",
-      description: "Unregelmäßige Anwendung",
+      label: "Basic Knowledge",
+      description: "Occasional use"
     }
   ],
   timeline: [
     {
       type: "experience",
-      title: "Duales Studium bei Deutsche Telekom AG",
+      title: "Dual Studies at Deutsche Telekom AG",
       institution: "Deutsche Telekom AG",
-      period: "Oktober 2021 – September 2023",
+      period: "October 2021 – September 2023",
       details: [
         {
-          label: "Einsatzort",
-          content: ["IT und T-Labs"],
+          label: "Location",
+          content: ["IT and T-Labs"],
         },
         {
-          label: "Projekte",
+          label: "Projects",
           content: [
-            "Kahoot Klon, Quantum Secure Communication (Open VPN)",
+            "Kahoot Clone, Quantum Secure Communication (Open VPN)",
             "Kubernetes, Docker, CI/CD",
           ],
         },
         {
-          label: "Tätigkeiten",
-          content: ["Frontend- und Backend-Entwicklung, Python Scripts"],
+          label: "Responsibilities",
+          content: ["Frontend and Backend Development, Python Scripts"],
         },
         {
-          label: "Arbeitsweise",
-          content: ["Projektplanung und agiles Arbeiten im Team"],
+          label: "Work Style",
+          content: ["Project Planning and Agile Team Work"],
         },
         {
-          label: "Erfahrungen",
+          label: "Experience",
           content: [
             "Angular, Spring Boot, Python, Kotlin, Android Studio",
           ],
@@ -84,85 +84,83 @@ export const resumeData: ResumeData = {
     },
     {
       type: "experience",
-      title: "Werkstudent Softwareentwickler (Webentwicklung, Full Stack)",
+      title: "Working Student Software Developer (Web Development, Full Stack)",
       institution: "ImmoScout24",
-      period: "November 2023 – heute",
+      period: "November 2023 – Present",
       details: [
         {
-          label: "Tätigkeiten",
+          label: "Responsibilities",
           content: [
-            "Frontend- und Backend-Entwicklung in mehreren Projekten",
-            "Arbeit im Scrum-Team mit regelmäßigen Sprints",
-            "Eigenständige Verwirklichung von Features",
-            "Selbstständig von Implementierung bis Release",
+            "Frontend and Backend Development in multiple projects",
+            "Working in Scrum team with regular sprints",
+            "Independent feature implementation",
+            "Self-managed from implementation to release",
           ],
         },
         {
-          label: "Arbeitsweise",
+          label: "Work Style",
           content: [
-            "Implementierung",
-            "Testen und Qualitätssicherung",
+            "Implementation",
+            "Testing and Quality Assurance",
             "UAT (User Acceptance Testing)",
-            "Release-Management",
+            "Release Management",
           ],
         },
         {
-          label: "Erfahrungen",
+          label: "Experience",
           content: [
-            "React, Java, Amazon EC2, S3, IAM, PostgresQL, MySQL",
+            "React, Java, Amazon EC2, S3, IAM, PostgreSQL, MySQL",
           ],
         },
       ],
     },
     {
       type: "education",
-      title: "Abitur, allgemeine Hochschulreife",
+      title: "High School Diploma",
       institution: "Gymnasium",
       period: "2019 – 2021",
       details: [
         {
-          label: "Notendurchschnitt",
-          content: ["1,7"],
+          label: "Grade Average",
+          content: ["1.7"],
         },
         {
-          label: "Leistungskurse",
-          content: ["Mathematik und Informatik"],
+          label: "Advanced Courses",
+          content: ["Mathematics and Computer Science"],
         },
       ],
     },
     {
       type: "education",
-      title:
-        "B.Sc. Informations- und Kommunikationstechnik (Wechsel nach 4. Semester)",
+      title: "B.Sc. Information and Communication Technology (Transferred after 4th Semester)",
       institution: "HTWK Leipzig",
-      period: "Oktober 2021 – September 2023",
+      period: "October 2021 – September 2023",
       details: [
         {
-          label: "Relevante Module",
+          label: "Relevant Modules",
           content: [
-            "Projekt 1",
-            "Programmierung 1 & 2 (Java, C)",
-            "Technische Informatik",
-            "Informations- und Codierungstheorie",
+            "Project 1",
+            "Programming 1 & 2 (Java, C)",
+            "Technical Computer Science",
+            "Information and Coding Theory",
           ],
         },
       ],
     },
     {
       type: "education",
-      title:
-        "B.Sc. Angewandte Informatik (voraussichtlicher Abschluss: Sommersemester 2025)",
+      title: "B.Sc. Applied Computer Science (Expected Graduation: Summer Semester 2025)",
       institution: "HTW Berlin",
-      period: "Oktober 2023 – Heute",
+      period: "October 2023 – Present",
       details: [
         {
-          label: "Relevante Module",
+          label: "Relevant Modules",
           content: [
             "Software Engineering (Python)",
-            "Programmierung (Java)",
-            "Datenbanken",
+            "Programming (Java)",
+            "Databases",
             "Web Application Development (HTML, CSS, JavaScript)",
-            "Algorithmen und Datenstrukturen (Go)",
+            "Algorithms and Data Structures (Go)",
           ],
         },
       ],
@@ -170,7 +168,7 @@ export const resumeData: ResumeData = {
   ],
   hardSkills: [
     {
-      category: "Programmiersprachen",
+      category: "Programming Languages",
       items: [
         { name: "Python", level: "2" },
         { name: "Kotlin", level: "3" },
@@ -194,7 +192,7 @@ export const resumeData: ResumeData = {
       ],
     },
     {
-      category: "DevOps & Infrastruktur",
+      category: "DevOps & Infrastructure",
       items: [
         { name: "Docker", level: "2" },
         { name: "CI/CD", level: "2" },
@@ -205,14 +203,14 @@ export const resumeData: ResumeData = {
       ],
     },
     {
-      category: "Datenbanken",
+      category: "Databases",
       items: [
-        { name: "PostgresQL", level: "2" },
+        { name: "PostgreSQL", level: "2" },
         { name: "MySQL", level: "3" },
       ],
     },
     {
-      category: "Tools & Versionskontrolle",
+      category: "Tools & Version Control",
       items: [
         { name: "Git", level: "1" },
         { name: "GitHub", level: "1" },
@@ -224,9 +222,9 @@ export const resumeData: ResumeData = {
       items: [
         { name: "Jest", level: "1" },
         { name: "Cypress", level: "2" },
-        { name: "JUnit, Mocktito", level: "1" },
+        { name: "JUnit, Mockito", level: "1" },
         { name: "Playwright", level: "2" },
       ],
     },
   ],
-};
+}; 
