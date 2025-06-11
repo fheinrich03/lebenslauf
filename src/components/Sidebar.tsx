@@ -46,50 +46,26 @@ const Sidebar: React.FC<{ data: ResumeData }> = ({ data }) => {
       <Stack spacing={1} mb={3}>
         <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
           <Email fontSize="small" />
-          <Typography
-            variant="body2"
-            component="a"
-            href={contact.email.link}
-            sx={{ color: "inherit", textDecoration: "underline" }}
-          >
+          <Typography variant="body2">
             {contact.email.label}
           </Typography>
         </Box>
         <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
           <Phone fontSize="small" />
-          <Typography
-            variant="body2"
-            component="a"
-            href={contact.phone.link}
-            sx={{ color: "inherit", textDecoration: "underline" }}
-          >
+          <Typography variant="body2">
             {contact.phone.label}
           </Typography>
         </Box>
         <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
           <LocationOn fontSize="small" />
-          <Typography
-            variant="body2"
-            component="a"
-            href={contact.location.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            sx={{ color: "inherit", textDecoration: "underline" }}
-          >
+          <Typography variant="body2">
             {contact.location.label}
           </Typography>
         </Box>
         {contact.linkedin && (
           <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
             <LinkedIn fontSize="small" />
-            <Typography
-              variant="body2"
-              component="a"
-              href={contact.linkedin.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              sx={{ color: "inherit", textDecoration: "underline" }}
-            >
+            <Typography variant="body2">
               {contact.linkedin.label}
             </Typography>
           </Box>
@@ -97,14 +73,7 @@ const Sidebar: React.FC<{ data: ResumeData }> = ({ data }) => {
         {contact.github && (
           <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
             <GitHub fontSize="small" />
-            <Typography
-              variant="body2"
-              component="a"
-              href={contact.github.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              sx={{ color: "inherit", textDecoration: "underline" }}
-            >
+            <Typography variant="body2">
               {contact.github.label}
             </Typography>
           </Box>

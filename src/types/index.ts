@@ -23,15 +23,14 @@ export interface Skill {
 
 export interface ContactItem {
   label: string;
-  link: string;
 }
 
 export interface Contact {
   email: ContactItem;
   phone: ContactItem;
   location: ContactItem;
-  linkedin: ContactItem;
-  github: ContactItem;
+  linkedin?: ContactItem;
+  github?: ContactItem;
 }
 
 export interface Language {

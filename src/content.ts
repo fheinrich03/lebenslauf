@@ -3,27 +3,22 @@ import { ResumeData } from "./types/index";
 export const resumeData: ResumeData = {
   name: "Felix Heinrich",
   title: "Student & Fullstack Softwareentwickler",
-  summary: "Werkstudent im Bereich Softwareentwicklung mit praktischer Erfahrung in modernen Webtechnologien und Cloud-Lösungen. Schwerpunkt auf der Full-Stack-Entwicklung, ergänzt durch Kenntnisse in Mobile Development, AWS-Services und agilen Methoden. Zielstrebiger Informatikstudent mit Expertise in der Umsetzung moderner Softwarelösungen.",
+  summary: "Motivierter Informatikstudent (Abschluss Sommer 2025) mit über 2 Jahren praktischer Erfahrung als Fullstack-Entwickler bei ImmoScout24 und der Deutschen Telekom. Spezialisiert auf moderne Webtechnologien (React, TypeScript, Java) und Cloud-Lösungen (AWS, Docker, CI/CD).",
   contact: {
     email: {
-      label: "heinrichfelix03@gmail.com",
-      link: "mailto:heinrichfelix03@gmail.com"
+      label: "heinrichfelix03@gmail.com"
     },
     phone: {
-      label: "+49 1729723090",
-      link: "tel:+491729723090"
+      label: "+49 1729723090"
     },
     location: {
-      label: "Bernau bei Berlin, Deutschland",
-      link: "https://www.google.com/maps/place/Bernau+bei+Berlin"
+      label: "Bernau bei Berlin, Deutschland"
     },
     linkedin: {
-      label: "felix-heinrich-b2b66b26b",
-      link: "https://www.linkedin.com/in/felix-heinrich-b2b66b26b/"
+      label: "felix-heinrich-b2b66b26b"
     },
     github: {
-      label: "fheinrich03",
-      link: "https://github.com/fheinrich03"
+      label: "fheinrich03"
     }
   },
   languages: [
@@ -40,7 +35,7 @@ export const resumeData: ResumeData = {
     {
       level: "1",
       label: "Professionell",
-      description: "Eigenständige Feature-Entwicklung"
+      description: "Etablierte Projekterfahrung"
     },
     {
       level: "2",
